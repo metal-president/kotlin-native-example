@@ -14,6 +14,8 @@
 		A2419D7D258BBDF100B11A07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2419D7B258BBDF100B11A07 /* LaunchScreen.storyboard */; };
 		A2419D88258BBDF100B11A07 /* KotlinNativeiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2419D87258BBDF100B11A07 /* KotlinNativeiOSTests.swift */; };
 		A2419D93258BBDF100B11A07 /* KotlinNativeiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2419D92258BBDF100B11A07 /* KotlinNativeiOSUITests.swift */; };
+		A2419DCE258BD9A900B11A07 /* kmmsharedmodule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2419DC9258BD8AA00B11A07 /* kmmsharedmodule.framework */; };
+		A2419DCF258BD9A900B11A07 /* kmmsharedmodule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A2419DC9258BD8AA00B11A07 /* kmmsharedmodule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A2419DD0258BD9A900B11A07 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A2419DCF258BD9A900B11A07 /* kmmsharedmodule.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		A2419D6D258BBDEE00B11A07 /* KotlinNativeiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KotlinNativeiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2419D70258BBDEE00B11A07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +63,7 @@
 		A2419D8E258BBDF100B11A07 /* KotlinNativeiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KotlinNativeiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2419D92258BBDF100B11A07 /* KotlinNativeiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KotlinNativeiOSUITests.swift; sourceTree = "<group>"; };
 		A2419D94258BBDF100B11A07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2419DC9258BD8AA00B11A07 /* kmmsharedmodule.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = kmmsharedmodule.framework; path = "../KotlinNativeAndroid/kmmsharedmodule/build/xcode-frameworks/kmmsharedmodule.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2419DCE258BD9A900B11A07 /* kmmsharedmodule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +99,7 @@
 				A2419D86258BBDF100B11A07 /* KotlinNativeiOSTests */,
 				A2419D91258BBDF100B11A07 /* KotlinNativeiOSUITests */,
 				A2419D6E258BBDEE00B11A07 /* Products */,
+				A2419DC8258BD8AA00B11A07 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +144,14 @@
 			path = KotlinNativeiOSUITests;
 			sourceTree = "<group>";
 		};
+		A2419DC8258BD8AA00B11A07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2419DC9258BD8AA00B11A07 /* kmmsharedmodule.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A2419D97258BBDF100B11A07 /* Build configuration list for PBXNativeTarget "KotlinNativeiOS" */;
 			buildPhases = (
+				A2419DB5258BD3BA00B11A07 /* ShellScript */,
 				A2419D69258BBDEE00B11A07 /* Sources */,
 				A2419D6A258BBDEE00B11A07 /* Frameworks */,
 				A2419D6B258BBDEE00B11A07 /* Resources */,
+				A2419DD0258BD9A900B11A07 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,6 +279,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A2419DB5258BD3BA00B11A07 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"$SRCROOT/../KotlinNativeAndroid/\"\n./gradlew :kmmsharedmodule:build -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A2419D69258BBDEE00B11A07 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -348,6 +397,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../KotlinNativeAndroid/kmmsharedmodule/build/xcode-frameworks";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -409,6 +459,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../KotlinNativeAndroid/kmmsharedmodule/build/xcode-frameworks";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
